@@ -66,6 +66,7 @@ Each response will be returned with one of the following HTTP status codes:
 ### Checkout Process APIs
 - Users can add product to cart
 - Users can remove product from cart
+- Users can get cart items
 - Users can initiate cart checkout process
 
 
