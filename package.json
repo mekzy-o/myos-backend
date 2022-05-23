@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "yarn build-ts",
     "build-ts": "rimraf build && tsc",
-    "start:dev": "DEBUG=development && tsc-watch --onSuccess \"nodemon build/index.js\"",
+    "start:dev": "tsc-watch --onSuccess \"nodemon build/index.js\"",
     "start": "node build/index.js",
     "format": "prettier --write \".md\" \"src/**/*.ts\" \"test/**/*.ts\"",
     "lint": "eslint . --ext .ts",

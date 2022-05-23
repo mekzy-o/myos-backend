@@ -28,7 +28,6 @@ const onListening = () => {
   const bind = typeof addr === "string" ? `pipe ${addr}` : `port ${addr?.port}`;
   const message = `🚀 Server listening on ${bind} with PID ${pid}`;
   logger.debug(message);
-  logger.info(message);
 };
 
 /**

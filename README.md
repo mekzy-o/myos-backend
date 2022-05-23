@@ -121,6 +121,11 @@ yarn install
 yarn run db:migrate
 ```
 
+- Run database seed
+```sh
+yarn run db:seed
+```
+
 - You can run the development server using
 
 ```sh
