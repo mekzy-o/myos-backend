@@ -25,6 +25,7 @@ app.use(express.json());
 
 // routes
 app.get("/", (req, res) => res.status(301).redirect("/api/v1"));
+app.get('/api/v1', (req, res) => res.status(200).send({ message: 'Welcome to the API' }));
 app.use("/api/v1", routes);
 app.all("*", (req: Request, res: Response) => {
   throw new ApplicationError({
