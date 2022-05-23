@@ -35,12 +35,12 @@ This is a RESTful API for a simple cart service.
     ├── typings
         ├── express
 ├── .env.sample
-├── .eslintrc
 ├── .gitignore
 ├── .sequelizerc
 ├── package.json
-├── prettier.config.js
-└── README.md
+├── README.json
+├── tsconfig.json
+└── yarn.lock
 ```
 
 ### HTTP Response Codes
@@ -53,7 +53,7 @@ Each response will be returned with one of the following HTTP status codes:
 - `404` `Not Found` An attempt was made to access a resource that does not exist in the API
 - `500` `Server Error` An error on the server occurred
 
-### Features Implemented
+## Features Implemented
 
 ### Authentication APIs
 - Users can sign up.
@@ -86,7 +86,6 @@ This project uses [Express.js](https://expressjs.com/) v4.16. It has the followi
 - Ensure you have **NodeJS** installed by entering `node -v` on your terminal
 If you don't have **NodeJS** installed, go to the [NodeJS Website](http://nodejs.org), and follow the download instructions
 
-
 ### Getting the Source
 
 You can clone this project directly using this command:
@@ -115,20 +114,20 @@ cp .env.example .env
 yarn install
 ```
 
-- Run migration
+- Run database migrations
 
 ```sh
 yarn run db:migrate
 ```
 
-- You can run the server using
+- You can run the development server using
 
 ```sh
 yarn run start:dev
 ```
 
 
-- Other `yarn` scripts are also available for handling database migration and database seeding:
+- Other `yarn` scripts are also available for handling database migrations and database seeding:
   - `yarn run db:migrate` runs script that is responsible for creating tables and their columns in the database,
   - `db:migrate:undo`: undoes the effect of `npm run db:migrate`,
   - `db:reset`: undoes all the migrations, then runs migration on the database,
@@ -157,7 +156,7 @@ yarn run start:dev
 - Admins are not required for this MVP, hence every logged-in user can perform all actions
 - Since there are no admins to add products. I created a seed data with each of products with each asset image file (hosted on cloudinary) (this can be found in my `src/database/seeders`).
 - I did not authenticate product listings and product search routes, this needs to be available to non-logged in users.
-- I assumed only users that are logged would be able to access cart, this may not be optimal and can be improved.
+- I assumed only users that are logged-in would be able to access cart, this may not be optimal and can be improved.
 - There are no payment gateway integration, so Check-Out process displays a summary showing total amount, cart id and user id
 - An order is created in the order table on successful Check-Out
 
